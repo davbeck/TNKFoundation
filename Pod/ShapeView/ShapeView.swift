@@ -8,18 +8,18 @@
 
 import UIKit
 
-class ShapeView: UIView {
-    override class func layerClass() -> AnyClass {
+public class ShapeView: UIView {
+    public override class func layerClass() -> AnyClass {
         return CAShapeLayer.self
     }
     
-    var shapeLayer: CAShapeLayer {
+    public var shapeLayer: CAShapeLayer {
         return self.layer as! CAShapeLayer
     }
     
-    @NSCopying var path: UIBezierPath?
+    @NSCopying public var path: UIBezierPath?
     
-    var fillColor: UIColor? {
+    public var fillColor: UIColor? {
         get {
 			if let fillColor = self.shapeLayer.fillColor {
 				return UIColor(CGColor: fillColor)
@@ -32,12 +32,12 @@ class ShapeView: UIView {
         }
     }
     
-    enum FillRule {
+    public enum FillRule {
         case NonZero
         case EvenOdd
     }
     
-    var fillRule: FillRule {
+    public var fillRule: FillRule {
         get {
             switch self.shapeLayer.fillRule {
             case kCAFillRuleNonZero:
@@ -58,13 +58,13 @@ class ShapeView: UIView {
         }
     }
     
-    enum LineCap {
+    public enum LineCap {
         case Butt
         case Round
         case Square
     }
     
-    var lineCap: LineCap {
+    public var lineCap: LineCap {
         get {
             switch self.shapeLayer.lineCap {
             case kCALineCapButt:
@@ -89,7 +89,7 @@ class ShapeView: UIView {
         }
     }
     
-    var lineDashPattern: [Int] {
+    public var lineDashPattern: [Int] {
         get {
             return self.shapeLayer.lineDashPattern?.map { (number) -> Int in
                 return number.integerValue
@@ -102,7 +102,7 @@ class ShapeView: UIView {
         }
     }
     
-    var lineDashPhase: CGFloat {
+    public var lineDashPhase: CGFloat {
         get {
             return self.shapeLayer.lineDashPhase
         }
@@ -111,13 +111,13 @@ class ShapeView: UIView {
         }
     }
     
-    enum LineJoin {
+    public enum LineJoin {
         case Miter
         case Round
         case Bevel
     }
     
-    var lineJoin: LineJoin {
+    public var lineJoin: LineJoin {
         get {
             switch self.shapeLayer.lineJoin {
             case kCALineJoinMiter:
@@ -142,7 +142,7 @@ class ShapeView: UIView {
         }
     }
     
-    var lineWidth: CGFloat {
+    public var lineWidth: CGFloat {
         get {
             return self.shapeLayer.lineWidth
         }
@@ -151,7 +151,7 @@ class ShapeView: UIView {
         }
     }
     
-    var miterLimit: CGFloat {
+    public var miterLimit: CGFloat {
         get {
             return self.shapeLayer.miterLimit
         }
@@ -160,7 +160,7 @@ class ShapeView: UIView {
         }
     }
     
-    var strokeColor: UIColor? {
+    public var strokeColor: UIColor? {
         get {
 			if let strokeColor = self.shapeLayer.strokeColor {
 				return UIColor(CGColor: strokeColor)
@@ -173,7 +173,7 @@ class ShapeView: UIView {
         }
     }
     
-    var strokeStart: CGFloat {
+    public var strokeStart: CGFloat {
         get {
             return self.shapeLayer.strokeStart
         }
@@ -182,7 +182,7 @@ class ShapeView: UIView {
         }
     }
     
-    var strokeEnd: CGFloat {
+    public var strokeEnd: CGFloat {
         get {
             return self.shapeLayer.strokeEnd
         }
@@ -191,11 +191,11 @@ class ShapeView: UIView {
         }
     }
     
-    enum SystemShape {
+    public enum SystemShape {
         case PlayIcon
     }
     
-    convenience init(systemShape: SystemShape) {
+    public convenience init(systemShape: SystemShape) {
         self.init()
         
         self.contentMode = .ScaleToFill
@@ -209,7 +209,7 @@ class ShapeView: UIView {
         self.path = path
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         if let path = self.path {
             let scaledPath = path.copy() as! UIBezierPath
             switch self.contentMode {

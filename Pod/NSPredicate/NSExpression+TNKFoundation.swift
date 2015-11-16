@@ -26,3 +26,7 @@ prefix operator % {}
 public prefix func % (value: String) -> NSExpression {
 	return NSExpression(forKeyPath: value)
 }
+
+public prefix func % (value: [String]) -> NSExpression {
+	return NSExpression(forKeyPath: value.joinWithSeparator("."))
+}

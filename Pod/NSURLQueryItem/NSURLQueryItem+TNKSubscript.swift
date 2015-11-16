@@ -10,7 +10,7 @@ import Foundation
 
 
 extension Array where Element:NSURLQueryItem {
-	subscript(name: String) -> String? {
+	public subscript(name: String) -> String? {
 		get {
 			for item in self {
 				if item.name == name {

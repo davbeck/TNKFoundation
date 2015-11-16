@@ -11,21 +11,21 @@ import UIKit
 
 @available(iOS 9.0, *)
 extension NSLayoutAnchor {
-	func constraintEqualToAnchor(anchor: NSLayoutAnchor, constant c: CGFloat = 0, priority: UILayoutPriority) -> NSLayoutConstraint {
+	public func constraintEqualToAnchor(anchor: NSLayoutAnchor, constant c: CGFloat = 0, priority: UILayoutPriority) -> NSLayoutConstraint {
 		let constraint = self.constraintEqualToAnchor(anchor, constant: c)
 		constraint.priority = priority
 		
 		return constraint
 	}
 	
-	func constraintGreaterThanOrEqualToAnchor(anchor: NSLayoutAnchor, constant c: CGFloat = 0, priority: UILayoutPriority) -> NSLayoutConstraint {
+	public func constraintGreaterThanOrEqualToAnchor(anchor: NSLayoutAnchor, constant c: CGFloat = 0, priority: UILayoutPriority) -> NSLayoutConstraint {
 		let constraint = self.constraintGreaterThanOrEqualToAnchor(anchor, constant: c)
 		constraint.priority = priority
 		
 		return constraint
 	}
 	
-	func constraintLessThanOrEqualToAnchor(anchor: NSLayoutAnchor, constant c: CGFloat = 0, priority: UILayoutPriority) -> NSLayoutConstraint {
+	public func constraintLessThanOrEqualToAnchor(anchor: NSLayoutAnchor, constant c: CGFloat = 0, priority: UILayoutPriority) -> NSLayoutConstraint {
 		let constraint = self.constraintLessThanOrEqualToAnchor(anchor, constant: c)
 		constraint.priority = priority
 		
@@ -36,7 +36,7 @@ extension NSLayoutAnchor {
 
 @available(iOS 9.0, *)
 extension UIView {
-	func constraintsEqualToView(view: UIView, withInsets insets: UIEdgeInsets = UIEdgeInsets()) -> [NSLayoutConstraint] {
+	public func constraintsEqualToView(view: UIView, withInsets insets: UIEdgeInsets = UIEdgeInsets()) -> [NSLayoutConstraint] {
 		return [
 			self.leftAnchor.constraintEqualToAnchor(view.leftAnchor, constant: insets.left),
 			self.topAnchor.constraintEqualToAnchor(view.topAnchor, constant: insets.top),
@@ -45,7 +45,7 @@ extension UIView {
 		]
 	}
 	
-	func constraintsEqualToLayoutGuide(layoutGuide: UILayoutGuide, withInsets insets: UIEdgeInsets = UIEdgeInsets()) -> [NSLayoutConstraint] {
+	public func constraintsEqualToLayoutGuide(layoutGuide: UILayoutGuide, withInsets insets: UIEdgeInsets = UIEdgeInsets()) -> [NSLayoutConstraint] {
 		return [
 			self.leftAnchor.constraintEqualToAnchor(layoutGuide.leftAnchor, constant: insets.left),
 			self.topAnchor.constraintEqualToAnchor(layoutGuide.topAnchor, constant: insets.top),
