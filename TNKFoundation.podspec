@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "TNKFoundation"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "A collection of small utilities in Swift."
 
   s.homepage         = "https://github.com/davbeck/TNKFoundation"

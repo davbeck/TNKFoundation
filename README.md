@@ -35,7 +35,7 @@ $ brew install carthage
 To integrate TNKFoundation into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "davbeck/TNKFoundation" ~> 0.3
+github "davbeck/TNKFoundation" ~> 0.1
 ```
 
 Run `carthage` to build the framework and drag the built `TNKFoundation.framework` into your Xcode project.
