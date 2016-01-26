@@ -76,7 +76,9 @@ public struct ObjectGraph {
 }
 
 extension ObjectGraph: SequenceType {
-	public class ObjectGraphGenerator: AnyGenerator<ObjectGraph> {
+	public struct ObjectGraphGenerator: GeneratorType {
+		public typealias Element = ObjectGraph
+		
 		let objectGraph: ObjectGraph
 		var index: Int = 0
 		
@@ -84,13 +86,13 @@ extension ObjectGraph: SequenceType {
 			self.objectGraph = objectGraph
 		}
 		
-		override public func next() -> Element? {
+		public mutating func next() -> Element? {
 			let item = objectGraph[index]
 			if item.object == nil {
 				return nil
 			}
 			
-			index++
+			index += 1
 			
 			return item
 		}

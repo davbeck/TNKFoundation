@@ -41,6 +41,16 @@ public func %== (left: String, right: NSObject) -> NSPredicate {
 	)
 }
 
+public func %== (left: String, right: String) -> NSPredicate {
+	return NSComparisonPredicate(
+		leftExpression: left.NSExpressionValue,
+		rightExpression: right.NSExpressionValue,
+		modifier: .DirectPredicateModifier,
+		type: .EqualToPredicateOperatorType,
+		options: []
+	)
+}
+
 
 infix operator %!= { precedence 130 }
 
