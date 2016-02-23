@@ -19,6 +19,6 @@ extension NSTimeInterval {
 	}
 	
 	@nonobjc public init(days: Double) {
-		self.init(hours: 24)
+		self.init(hours: days * 24)
 	}
 }
