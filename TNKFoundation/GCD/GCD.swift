@@ -10,7 +10,7 @@ import Foundation
 
 
 public func after(interval: NSTimeInterval, block: dispatch_block_t) {
-	DispatchQueue(.Main).after(interval, block: block)
+	DispatchQueue(priority: .Main).after(interval, block: block)
 }
 
 public struct DispatchQueue: CustomStringConvertible {
@@ -53,7 +53,7 @@ public struct DispatchQueue: CustomStringConvertible {
 		dispatchQueue = queue
 	}
 	
-	public init(_ priority: Priority) {
+	public init(priority: Priority) {
 		switch priority {
 		case .Background:
 			self.init(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
@@ -68,7 +68,7 @@ public struct DispatchQueue: CustomStringConvertible {
 		}
 	}
 	
-	public init(_ label: String, attributes: Attribute = .Serial) {
+	public init(label: String, attributes: Attribute = .Serial) {
 		switch attributes {
 		case .Serial:
 			self.init(dispatch_queue_create(label, DISPATCH_QUEUE_SERIAL))
@@ -78,7 +78,7 @@ public struct DispatchQueue: CustomStringConvertible {
 	}
 	
 	public init() {
-		self.init("")
+		self.init(label: "")
 	}
 	
 	public func async(block: dispatch_block_t) {
@@ -103,7 +103,11 @@ public struct DispatchGroup {
 	public let dispatchGroup: dispatch_group_t
 	
 	public init() {
-		dispatchGroup = dispatch_group_create()
+		self.init(dispatch_group_create())
+	}
+	
+	public init(_ dispatchGroup: dispatch_group_t) {
+		self.dispatchGroup = dispatchGroup
 	}
 	
 	public func async(queue: DispatchQueue, block: dispatch_block_t) {

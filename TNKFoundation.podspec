@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "TNKFoundation"
-  s.version          = "1.1.0"
+  s.version          = "2.0.0"
   s.summary          = "A collection of small utilities in Swift."
 
   s.homepage         = "https://github.com/davbeck/TNKFoundation"
@@ -16,35 +16,35 @@ Pod::Spec.new do |s|
   
   s.subspec "AutoLayout" do |sp|
     sp.platform = :ios
-    sp.source_files = "Pod/AutoLayout/*.swift"
+    sp.source_files = "TNKFoundation/AutoLayout/*.swift"
   end
   
   s.subspec "GCD" do |sp|
-    sp.source_files = "Pod/GCD/*.swift"
+    sp.source_files = "TNKFoundation/GCD/*.swift"
   end
   
   s.subspec "NSNumber" do |sp|
-    sp.source_files = "Pod/NSNumber/*.swift"
+    sp.source_files = "TNKFoundation/NSNumber/*.swift"
   end
 
   s.subspec "NSPredicate" do |sp|
-    sp.source_files = "Pod/NSPredicate/*.swift"
+    sp.source_files = "TNKFoundation/NSPredicate/*.swift"
   end
 
   s.subspec "NSTimeInterval" do |sp|
-    sp.source_files = "Pod/NSTimeInterval/*.swift"
+    sp.source_files = "TNKFoundation/NSTimeInterval/*.swift"
   end
   
   s.subspec "NSURLQueryItem" do |sp|
-    sp.source_files = "Pod/NSURLQueryItem/*.swift"
+    sp.source_files = "TNKFoundation/NSURLQueryItem/*.swift"
   end
   
   s.subspec "ObjectGraph" do |sp|
-    sp.source_files = "Pod/ObjectGraph/*.swift"
+    sp.source_files = "TNKFoundation/ObjectGraph/*.swift"
   end
   
   s.subspec "ShapeView" do |sp|
     sp.platform = :ios
-    sp.source_files = "Pod/ShapeView/*.swift"
+    sp.source_files = "TNKFoundation/ShapeView/*.swift"
   end
 end

@@ -1,6 +1,0 @@
-framework module Pods_TNKFoundation_Tests {
-  umbrella header "Pods-TNKFoundation_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

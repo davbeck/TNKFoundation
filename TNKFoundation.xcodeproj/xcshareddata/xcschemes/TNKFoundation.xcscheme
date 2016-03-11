@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "TNKFoundation_Example.app"
-               BlueprintName = "TNKFoundation_Example"
-               ReferencedContainer = "container:TNKFoundation.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "TNKFoundation_Tests.xctest"
-               BlueprintName = "TNKFoundation_Tests"
+               BlueprintIdentifier = "115B29291C93726B0051BF45"
+               BuildableName = "TNKFoundation.framework"
+               BlueprintName = "TNKFoundation"
                ReferencedContainer = "container:TNKFoundation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "TNKFoundation_Tests.xctest"
-               BlueprintName = "TNKFoundation_Tests"
+               BlueprintIdentifier = "115B29331C93726B0051BF45"
+               BuildableName = "TNKFoundationTests.xctest"
+               BlueprintName = "TNKFoundationTests"
                ReferencedContainer = "container:TNKFoundation.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TNKFoundation_Example.app"
-            BlueprintName = "TNKFoundation_Example"
+            BlueprintIdentifier = "115B29291C93726B0051BF45"
+            BuildableName = "TNKFoundation.framework"
+            BlueprintName = "TNKFoundation"
             ReferencedContainer = "container:TNKFoundation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TNKFoundation_Example.app"
-            BlueprintName = "TNKFoundation_Example"
+            BlueprintIdentifier = "115B29291C93726B0051BF45"
+            BuildableName = "TNKFoundation.framework"
+            BlueprintName = "TNKFoundation"
             ReferencedContainer = "container:TNKFoundation.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -94,16 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TNKFoundation_Example.app"
-            BlueprintName = "TNKFoundation_Example"
+            BlueprintIdentifier = "115B29291C93726B0051BF45"
+            BuildableName = "TNKFoundation.framework"
+            BlueprintName = "TNKFoundation"
             ReferencedContainer = "container:TNKFoundation.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

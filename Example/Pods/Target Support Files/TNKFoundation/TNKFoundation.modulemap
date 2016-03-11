@@ -1,6 +1,0 @@
-framework module TNKFoundation {
-  umbrella header "TNKFoundation-umbrella.h"
-
-  export *
-  module * { export * }
-}
