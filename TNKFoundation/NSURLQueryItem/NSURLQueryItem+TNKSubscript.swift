@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension Array where Element:NSURLQueryItem {
+extension Collection where Iterator.Element == URLQueryItem {
 	public subscript(name: String) -> String? {
 		get {
 			for item in self {

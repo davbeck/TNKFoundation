@@ -21,18 +21,18 @@ public struct ObjectGraph {
 	}
 	
 	
-	private static let numberFormatter: NSNumberFormatter = {
-		let formatter = NSNumberFormatter()
-		formatter.numberStyle = .DecimalStyle
-		formatter.lenient = false
+	private static let numberFormatter: NumberFormatter = {
+		let formatter = NumberFormatter()
+		formatter.numberStyle = .decimal
+		formatter.isLenient = false
 		
 		return formatter
 	}()
 	
-	private static let dateFormatter: NSDateFormatter = {
-		let formatter = NSDateFormatter()
-		formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-		formatter.timeZone = NSTimeZone(abbreviation: "GMT")
+	private static let dateFormatter: DateFormatter = {
+		let formatter = DateFormatter()
+		formatter.locale = Locale(localeIdentifier: "en_US_POSIX")
+		formatter.timeZone = TimeZone(abbreviation: "GMT")
 		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 		
 		return formatter
@@ -42,9 +42,9 @@ public struct ObjectGraph {
 		if let object = object as? String {
 			return object
 		} else if let object = object as? NSNumber {
-			return ObjectGraph.numberFormatter.stringFromNumber(object)
-		} else if let object = object as? NSDate {
-			return ObjectGraph.dateFormatter.stringFromDate(object)
+			return ObjectGraph.numberFormatter.string(from: object)
+		} else if let object = object as? Date {
+			return ObjectGraph.dateFormatter.string(from: object)
 		} else {
 			return nil
 		}
@@ -52,22 +52,22 @@ public struct ObjectGraph {
 	
 	public var numberValue: NSNumber? {
 		if let object = object as? String {
-			return ObjectGraph.numberFormatter.numberFromString(object)
+			return ObjectGraph.numberFormatter.number(from: object)
 		} else if let object = object as? NSNumber {
 			return object
-		} else if let object = object as? NSDate {
-			return NSNumber(double: object.timeIntervalSince1970)
+		} else if let object = object as? Date {
+			return NSNumber(value: object.timeIntervalSince1970)
 		} else {
 			return nil
 		}
 	}
 	
-	public var dateValue: NSDate? {
+	public var dateValue: Date? {
 		if let object = object as? String {
-			return ObjectGraph.dateFormatter.dateFromString(object)
+			return ObjectGraph.dateFormatter.date(from: object)
 		} else if let object = object as? NSNumber {
-			return NSDate(timeIntervalSince1970: object.doubleValue)
-		} else if let object = object as? NSDate {
+			return Date(timeIntervalSince1970: object.doubleValue)
+		} else if let object = object as? Date {
 			return object
 		} else {
 			return nil
@@ -75,8 +75,8 @@ public struct ObjectGraph {
 	}
 }
 
-extension ObjectGraph: SequenceType {
-	public struct ObjectGraphGenerator: GeneratorType {
+extension ObjectGraph: Sequence {
+	public struct ObjectGraphGenerator: IteratorProtocol {
 		public typealias Element = ObjectGraph
 		
 		let objectGraph: ObjectGraph
@@ -98,14 +98,14 @@ extension ObjectGraph: SequenceType {
 		}
 	}
 	
-	public typealias Generator = ObjectGraphGenerator
+	public typealias Iterator = ObjectGraphGenerator
 	
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		return ObjectGraphGenerator(self)
 	}
 }
 
-extension ObjectGraph : CollectionType {
+extension ObjectGraph : Collection {
 	public typealias Index = Int
 	
 	public var startIndex: Int {
@@ -120,6 +120,10 @@ extension ObjectGraph : CollectionType {
 		} else {
 			return 1
 		}
+	}
+	
+	public func index(after i: Int) -> Int {
+		return i + 1
 	}
 	
 	public subscript(index: Int) -> ObjectGraph {

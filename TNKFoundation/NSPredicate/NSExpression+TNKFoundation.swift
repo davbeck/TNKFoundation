@@ -28,5 +28,5 @@ public prefix func % (value: String) -> NSExpression {
 }
 
 public prefix func % (value: [String]) -> NSExpression {
-	return NSExpression(forKeyPath: value.joinWithSeparator("."))
+	return NSExpression(forKeyPath: value.joined(separator: "."))
 }

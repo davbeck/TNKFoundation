@@ -11,42 +11,42 @@ import Foundation
 
 infix operator %== { precedence 130 }
 
-public func %== (left: NSObject, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %== (left: NSObject, right: NSObject) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .EqualToPredicateOperatorType,
+		modifier: .direct,
+		type: .equalTo,
 		options: []
 	)
 }
 
-public func %== (left: NSObject, right: String) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %== (left: NSObject, right: String) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .EqualToPredicateOperatorType,
+		modifier: .direct,
+		type: .equalTo,
 		options: []
 	)
 }
 
-public func %== (left: String, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %== (left: String, right: NSObject) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .EqualToPredicateOperatorType,
+		modifier: .direct,
+		type: .equalTo,
 		options: []
 	)
 }
 
-public func %== (left: String, right: String) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %== (left: String, right: String) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .EqualToPredicateOperatorType,
+		modifier: .direct,
+		type: .equalTo,
 		options: []
 	)
 }
@@ -54,12 +54,12 @@ public func %== (left: String, right: String) -> NSPredicate {
 
 infix operator %!= { precedence 130 }
 
-public func %!= (left: NSObject, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %!= (left: NSObject, right: NSObject) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .NotEqualToPredicateOperatorType,
+		modifier: .direct,
+		type: .notEqualTo,
 		options: []
 	)
 }
@@ -67,12 +67,12 @@ public func %!= (left: NSObject, right: NSObject) -> NSPredicate {
 
 infix operator %<= { precedence 130 }
 
-public func %<= (left: NSObject, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %<= (left: NSObject, right: NSObject) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .LessThanOrEqualToPredicateOperatorType,
+		modifier: .direct,
+		type: .lessThanOrEqualTo,
 		options: []
 	)
 }
@@ -80,12 +80,12 @@ public func %<= (left: NSObject, right: NSObject) -> NSPredicate {
 
 infix operator %< { precedence 130 }
 
-public func %< (left: NSObject, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %< (left: NSObject, right: NSObject) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .LessThanPredicateOperatorType,
+		modifier: .direct,
+		type: .lessThan,
 		options: []
 	)
 }
@@ -93,12 +93,12 @@ public func %< (left: NSObject, right: NSObject) -> NSPredicate {
 
 infix operator %>= { precedence 130 }
 
-public func %>= (left: NSObject, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %>= (left: NSObject, right: NSObject) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .GreaterThanOrEqualToPredicateOperatorType,
+		modifier: .direct,
+		type: .greaterThanOrEqualTo,
 		options: []
 	)
 }
@@ -106,76 +106,76 @@ public func %>= (left: NSObject, right: NSObject) -> NSPredicate {
 
 infix operator %> { precedence 130 }
 
-public func %> (left: NSObject, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
+public func %> (left: NSObject, right: NSObject) -> Predicate {
+	return ComparisonPredicate(
 		leftExpression: left.NSExpressionValue,
 		rightExpression: right.NSExpressionValue,
-		modifier: .DirectPredicateModifier,
-		type: .GreaterThanPredicateOperatorType,
+		modifier: .direct,
+		type: .greaterThan,
 		options: []
 	)
 }
 
 
 public enum PredicateType {
-	case LessThan
-	case LessThanOrEqual
+	case lessThan
+	case lessThanOrEqual
 	
-	case GreaterThan
-	case GreaterThanOrEqual
+	case greaterThan
+	case greaterThanOrEqual
 	
-	case EqualTo
-	case NotEqualTo
+	case equalTo
+	case notEqualTo
 	
-	case Matches
-	case Like
-	case BeginsWith
-	case EndsWith
-	case In
-	case Contains
-	case Between
+	case matches
+	case like
+	case beginsWith
+	case endsWith
+	case `in`
+	case contains
+	case between
 	
-	public var NSValue: NSPredicateOperatorType {
+	public var NSValue: ComparisonPredicate.Operator {
 		switch self {
-		case LessThan:
-			return .LessThanPredicateOperatorType
-		case LessThanOrEqual:
-			return .LessThanOrEqualToPredicateOperatorType
+		case lessThan:
+			return .lessThan
+		case lessThanOrEqual:
+			return .lessThanOrEqualTo
 			
-		case GreaterThan:
-			return .GreaterThanPredicateOperatorType
-		case GreaterThanOrEqual:
-			return .GreaterThanOrEqualToPredicateOperatorType
+		case greaterThan:
+			return .greaterThan
+		case greaterThanOrEqual:
+			return .greaterThanOrEqualTo
 			
-		case EqualTo:
-			return .EqualToPredicateOperatorType
-		case NotEqualTo:
-			return .NotEqualToPredicateOperatorType
+		case equalTo:
+			return .equalTo
+		case notEqualTo:
+			return .notEqualTo
 			
-		case Matches:
-			return .MatchesPredicateOperatorType
-		case Like:
-			return .LikePredicateOperatorType
-		case BeginsWith:
-			return .BeginsWithPredicateOperatorType
-		case EndsWith:
-			return .EndsWithPredicateOperatorType
-		case In:
-			return .InPredicateOperatorType
-		case Contains:
-			return .ContainsPredicateOperatorType
-		case Between:
-			return .BetweenPredicateOperatorType
+		case matches:
+			return .matches
+		case like:
+			return .like
+		case beginsWith:
+			return .beginsWith
+		case endsWith:
+			return .endsWith
+		case `in`:
+			return .in
+		case contains:
+			return .contains
+		case between:
+			return .between
 		}
 	}
 }
 
-extension NSComparisonPredicate {
+extension ComparisonPredicate {
 	public convenience init(_ leftExpression: NSObject, _ type: PredicateType, _ rightExpression: NSObject) {
 		self.init(
 			leftExpression: leftExpression.NSExpressionValue,
 			rightExpression: rightExpression.NSExpressionValue,
-			modifier: .DirectPredicateModifier,
+			modifier: .direct,
 			type: type.NSValue,
 			options: []
 		)

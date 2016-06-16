@@ -10,16 +10,12 @@
 		115B292E1C93726B0051BF45 /* TNKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 115B292D1C93726B0051BF45 /* TNKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		115B29351C93726B0051BF45 /* TNKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115B292A1C93726B0051BF45 /* TNKFoundation.framework */; };
 		115B29561C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29451C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift */; };
-		115B29571C9372930051BF45 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29471C9372930051BF45 /* GCD.swift */; };
-		115B29581C9372930051BF45 /* NSNumber+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29491C9372930051BF45 /* NSNumber+TNKFoundation.swift */; };
 		115B29591C9372930051BF45 /* NSComparisonPredicate+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B294B1C9372930051BF45 /* NSComparisonPredicate+TNKFoundation.swift */; };
 		115B295A1C9372930051BF45 /* NSCompoundPredicate+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B294C1C9372930051BF45 /* NSCompoundPredicate+TNKFoundation.swift */; };
 		115B295B1C9372930051BF45 /* NSExpression+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B294D1C9372930051BF45 /* NSExpression+TNKFoundation.swift */; };
 		115B295C1C9372930051BF45 /* NSTimeInterval+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B294F1C9372930051BF45 /* NSTimeInterval+TNKFoundation.swift */; };
 		115B295D1C9372930051BF45 /* NSURLQueryItem+TNKSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29511C9372930051BF45 /* NSURLQueryItem+TNKSubscript.swift */; };
 		115B295E1C9372930051BF45 /* ObjectGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29531C9372930051BF45 /* ObjectGraph.swift */; };
-		115B295F1C9372930051BF45 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29551C9372930051BF45 /* ShapeView.swift */; };
-		115B29631C9372FC0051BF45 /* NSNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29611C9372FC0051BF45 /* NSNumberTests.swift */; };
 		115B29641C9372FC0051BF45 /* NSPredicateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29621C9372FC0051BF45 /* NSPredicateTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,17 +36,13 @@
 		115B29341C93726B0051BF45 /* TNKFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TNKFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		115B293B1C93726B0051BF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		115B29451C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+TNKFoundation.swift"; sourceTree = "<group>"; };
-		115B29471C9372930051BF45 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
-		115B29491C9372930051BF45 /* NSNumber+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+TNKFoundation.swift"; sourceTree = "<group>"; };
 		115B294B1C9372930051BF45 /* NSComparisonPredicate+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSComparisonPredicate+TNKFoundation.swift"; sourceTree = "<group>"; };
 		115B294C1C9372930051BF45 /* NSCompoundPredicate+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCompoundPredicate+TNKFoundation.swift"; sourceTree = "<group>"; };
 		115B294D1C9372930051BF45 /* NSExpression+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSExpression+TNKFoundation.swift"; sourceTree = "<group>"; };
 		115B294F1C9372930051BF45 /* NSTimeInterval+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+TNKFoundation.swift"; sourceTree = "<group>"; };
 		115B29511C9372930051BF45 /* NSURLQueryItem+TNKSubscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLQueryItem+TNKSubscript.swift"; sourceTree = "<group>"; };
 		115B29531C9372930051BF45 /* ObjectGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectGraph.swift; sourceTree = "<group>"; };
-		115B29551C9372930051BF45 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		115B29601C9372FB0051BF45 /* TNKFoundationTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TNKFoundationTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		115B29611C9372FC0051BF45 /* NSNumberTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumberTests.swift; sourceTree = "<group>"; };
 		115B29621C9372FC0051BF45 /* NSPredicateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,13 +87,10 @@
 			isa = PBXGroup;
 			children = (
 				115B29441C9372930051BF45 /* AutoLayout */,
-				115B29461C9372930051BF45 /* GCD */,
-				115B29481C9372930051BF45 /* NSNumber */,
 				115B294A1C9372930051BF45 /* NSPredicate */,
 				115B294E1C9372930051BF45 /* NSTimeInterval */,
 				115B29501C9372930051BF45 /* NSURLQueryItem */,
 				115B29521C9372930051BF45 /* ObjectGraph */,
-				115B29541C9372930051BF45 /* ShapeView */,
 				115B292D1C93726B0051BF45 /* TNKFoundation.h */,
 				115B292F1C93726B0051BF45 /* Info.plist */,
 			);
@@ -111,7 +100,6 @@
 		115B29381C93726B0051BF45 /* TNKFoundationTests */ = {
 			isa = PBXGroup;
 			children = (
-				115B29611C9372FC0051BF45 /* NSNumberTests.swift */,
 				115B29621C9372FC0051BF45 /* NSPredicateTests.swift */,
 				115B293B1C93726B0051BF45 /* Info.plist */,
 				115B29601C9372FB0051BF45 /* TNKFoundationTests-Bridging-Header.h */,
@@ -125,22 +113,6 @@
 				115B29451C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift */,
 			);
 			path = AutoLayout;
-			sourceTree = "<group>";
-		};
-		115B29461C9372930051BF45 /* GCD */ = {
-			isa = PBXGroup;
-			children = (
-				115B29471C9372930051BF45 /* GCD.swift */,
-			);
-			path = GCD;
-			sourceTree = "<group>";
-		};
-		115B29481C9372930051BF45 /* NSNumber */ = {
-			isa = PBXGroup;
-			children = (
-				115B29491C9372930051BF45 /* NSNumber+TNKFoundation.swift */,
-			);
-			path = NSNumber;
 			sourceTree = "<group>";
 		};
 		115B294A1C9372930051BF45 /* NSPredicate */ = {
@@ -175,14 +147,6 @@
 				115B29531C9372930051BF45 /* ObjectGraph.swift */,
 			);
 			path = ObjectGraph;
-			sourceTree = "<group>";
-		};
-		115B29541C9372930051BF45 /* ShapeView */ = {
-			isa = PBXGroup;
-			children = (
-				115B29551C9372930051BF45 /* ShapeView.swift */,
-			);
-			path = ShapeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,14 +206,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Think Ultimate LLC";
 				TargetAttributes = {
 					115B29291C93726B0051BF45 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					115B29331C93726B0051BF45 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -293,15 +259,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				115B295F1C9372930051BF45 /* ShapeView.swift in Sources */,
 				115B295B1C9372930051BF45 /* NSExpression+TNKFoundation.swift in Sources */,
 				115B29591C9372930051BF45 /* NSComparisonPredicate+TNKFoundation.swift in Sources */,
 				115B295C1C9372930051BF45 /* NSTimeInterval+TNKFoundation.swift in Sources */,
-				115B29571C9372930051BF45 /* GCD.swift in Sources */,
 				115B295E1C9372930051BF45 /* ObjectGraph.swift in Sources */,
 				115B295D1C9372930051BF45 /* NSURLQueryItem+TNKSubscript.swift in Sources */,
 				115B29561C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift in Sources */,
-				115B29581C9372930051BF45 /* NSNumber+TNKFoundation.swift in Sources */,
 				115B295A1C9372930051BF45 /* NSCompoundPredicate+TNKFoundation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				115B29641C9372FC0051BF45 /* NSPredicateTests.swift in Sources */,
-				115B29631C9372FC0051BF45 /* NSNumberTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThinkUltimate.TNKFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -446,6 +409,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThinkUltimate.TNKFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -459,6 +424,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TNKFoundationTests/TNKFoundationTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -471,6 +437,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThinkUltimate.TNKFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TNKFoundationTests/TNKFoundationTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

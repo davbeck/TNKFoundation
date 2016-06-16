@@ -24,7 +24,7 @@ class NSPredicateTests: XCTestCase {
 		"gender": "female",
 	]
 	
-	lazy var data: NSSet = [
+	lazy var data: Set = [
 		self.john,
 		self.jane,
 		self.frank,
@@ -45,7 +45,7 @@ class NSPredicateTests: XCTestCase {
 	func testEquals() {
 		do {
 			let predicate = %"age" %== %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -53,7 +53,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = "foo" %== "foo"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -61,7 +61,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = %"age" %== 33
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ john, jane ]
 			XCTAssertEqual(subData, expected)
@@ -69,7 +69,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = 33 %== %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ john, jane ]
 			XCTAssertEqual(subData, expected)
@@ -79,7 +79,7 @@ class NSPredicateTests: XCTestCase {
 	func testNotEqual() {
 		do {
 			let predicate = %"age" %!= %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -87,7 +87,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = "foo" %!= "foo"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -95,7 +95,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = %"age" %!= 33
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ frank, grace ]
 			XCTAssertEqual(subData, expected)
@@ -103,7 +103,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = 33 %!= %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ frank, grace ]
 			XCTAssertEqual(subData, expected)
@@ -113,7 +113,7 @@ class NSPredicateTests: XCTestCase {
 	func testLessThanOrEqual() {
 		do {
 			let predicate = %"age" %<= %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -121,7 +121,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %<= NSNumber(3)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -129,7 +129,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %<= NSNumber(5)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -137,7 +137,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %<= NSNumber(8)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -145,7 +145,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = %"age" %<= 13
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ frank, grace ]
 			XCTAssertEqual(subData, expected)
@@ -153,7 +153,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = 14 %<= %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ john, jane ]
 			XCTAssertEqual(subData, expected)
@@ -163,7 +163,7 @@ class NSPredicateTests: XCTestCase {
 	func testLessThan() {
 		do {
 			let predicate = %"age" %< %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -171,7 +171,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %< NSNumber(3)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -179,7 +179,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %< NSNumber(5)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -187,7 +187,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %< NSNumber(8)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -195,7 +195,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = %"age" %< 13
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ grace ]
 			XCTAssertEqual(subData, expected)
@@ -203,7 +203,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = 14 %< %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ john, jane ]
 			XCTAssertEqual(subData, expected)
@@ -213,7 +213,7 @@ class NSPredicateTests: XCTestCase {
 	func testGreaterThanOrEqual() {
 		do {
 			let predicate = %"age" %>= %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -221,7 +221,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %>= NSNumber(3)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -229,7 +229,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %>= NSNumber(5)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -237,7 +237,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %>= NSNumber(8)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -245,7 +245,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = %"age" %>= 13
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ frank, john, jane ]
 			XCTAssertEqual(subData, expected)
@@ -253,7 +253,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = 14 %>= %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ frank, grace ]
 			XCTAssertEqual(subData, expected)
@@ -263,7 +263,7 @@ class NSPredicateTests: XCTestCase {
 	func testGreaterThan() {
 		do {
 			let predicate = %"age" %> %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -271,7 +271,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %> NSNumber(3)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
@@ -279,7 +279,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %> NSNumber(5)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -287,7 +287,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = NSNumber(5) %> NSNumber(8)
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
@@ -295,7 +295,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = %"age" %> 13
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ john, jane ]
 			XCTAssertEqual(subData, expected)
@@ -303,7 +303,7 @@ class NSPredicateTests: XCTestCase {
 		
 		do {
 			let predicate = 14 %> %"age"
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [ frank, grace ]
 			XCTAssertEqual(subData, expected)
@@ -312,32 +312,32 @@ class NSPredicateTests: XCTestCase {
 	
 	func testMatches() {
 		do {
-			let predicate = NSComparisonPredicate("john@example.com", .Matches, ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*")
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let predicate = ComparisonPredicate("john@example.com", .matches, ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*")
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
 		}
 		
 		do {
-			let predicate = NSComparisonPredicate("example.com", .Matches, ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*")
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let predicate = ComparisonPredicate("example.com", .matches, ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*")
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
 			XCTAssertEqual(subData, expected)
 		}
 		
 		do {
-			let predicate = NSComparisonPredicate(%"gender", .Matches, ".*male")
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let predicate = ComparisonPredicate(%"gender", .matches, ".*male")
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
 			XCTAssertEqual(subData, expected)
 		}
 		
 		do {
-			let predicate = NSComparisonPredicate(%"gender", .Matches, "fe.*le")
-			let subData = data.filteredSetUsingPredicate(predicate)
+			let predicate = ComparisonPredicate(%"gender", .matches, "fe.*le")
+			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [jane, grace]
 			XCTAssertEqual(subData, expected)
@@ -346,7 +346,7 @@ class NSPredicateTests: XCTestCase {
 	
 	func testAnd() {
 		let predicate = %"age" %== 33 && %"gender" %== "male"
-		let subData = data.filteredSetUsingPredicate(predicate)
+		let subData = data.filtered(using: predicate)
 		
 		let expected: NSSet = [ john ]
 		XCTAssertEqual(subData, expected)
@@ -354,7 +354,7 @@ class NSPredicateTests: XCTestCase {
 	
 	func testOr() {
 		let predicate = %"age" %== 33 || %"gender" %== "male"
-		let subData = data.filteredSetUsingPredicate(predicate)
+		let subData = data.filtered(using: predicate)
 		
 		let expected: NSSet = [ john, jane, frank ]
 		XCTAssertEqual(subData, expected)
@@ -362,7 +362,7 @@ class NSPredicateTests: XCTestCase {
 	
 	func testNot() {
 		let predicate = !(%"age" %== 33)
-		let subData = data.filteredSetUsingPredicate(predicate)
+		let subData = data.filtered(using: predicate)
 		
 		let expected: NSSet = [ frank, grace ]
 		XCTAssertEqual(subData, expected)
