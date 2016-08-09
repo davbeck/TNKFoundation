@@ -9,14 +9,14 @@
 import Foundation
 
 
-public func && (left: Predicate, right: Predicate) -> Predicate {
-	return CompoundPredicate(type: .and, subpredicates: [left, right])
+public func && (left: NSPredicate, right: NSPredicate) -> NSPredicate {
+	return NSCompoundPredicate(type: .and, subpredicates: [left, right])
 }
 
-public func || (left: Predicate, right: Predicate) -> Predicate {
-	return CompoundPredicate(type: .or, subpredicates: [left, right])
+public func || (left: NSPredicate, right: NSPredicate) -> NSPredicate {
+	return NSCompoundPredicate(type: .or, subpredicates: [left, right])
 }
 
-public prefix func ! (predicate: Predicate) -> Predicate {
-	return CompoundPredicate(type: .not, subpredicates: [predicate])
+public prefix func ! (predicate: NSPredicate) -> NSPredicate {
+	return NSCompoundPredicate(type: .not, subpredicates: [predicate])
 }

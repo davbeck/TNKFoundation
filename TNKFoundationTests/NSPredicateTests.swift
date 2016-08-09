@@ -312,7 +312,7 @@ class NSPredicateTests: XCTestCase {
 	
 	func testMatches() {
 		do {
-			let predicate = ComparisonPredicate("john@example.com", .matches, ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*")
+			let predicate = NSComparisonPredicate("john@example.com", .matches, ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*")
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
@@ -320,7 +320,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = ComparisonPredicate("example.com", .matches, ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*")
+			let predicate = NSComparisonPredicate("example.com", .matches, ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*")
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
@@ -328,7 +328,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = ComparisonPredicate(%"gender", .matches, ".*male")
+			let predicate = NSComparisonPredicate(%"gender", .matches, ".*male")
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
@@ -336,7 +336,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = ComparisonPredicate(%"gender", .matches, "fe.*le")
+			let predicate = NSComparisonPredicate(%"gender", .matches, "fe.*le")
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = [jane, grace]
