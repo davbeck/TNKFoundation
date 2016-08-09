@@ -24,7 +24,7 @@ class NSPredicateTests: XCTestCase {
 		"gender": "female",
 	]
 	
-	lazy var data: Set = [
+	lazy var data: NSSet = [
 		self.john,
 		self.jane,
 		self.frank,
@@ -120,7 +120,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %<= NSNumber(3)
+			let predicate = NSNumber(value: 5) %<= NSNumber(value: 3)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
@@ -128,7 +128,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %<= NSNumber(5)
+			let predicate = NSNumber(value: 5) %<= NSNumber(value: 5)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
@@ -136,7 +136,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %<= NSNumber(8)
+			let predicate = NSNumber(value: 5) %<= NSNumber(value: 8)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
@@ -170,7 +170,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %< NSNumber(3)
+			let predicate = NSNumber(value: 5) %< NSNumber(value: 3)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
@@ -178,7 +178,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %< NSNumber(5)
+			let predicate = NSNumber(value: 5) %< NSNumber(value: 5)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
@@ -186,7 +186,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %< NSNumber(8)
+			let predicate = NSNumber(value: 5) %< NSNumber(value: 8)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
@@ -220,7 +220,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %>= NSNumber(3)
+			let predicate = NSNumber(value: 5) %>= NSNumber(value: 3)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
@@ -228,7 +228,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %>= NSNumber(5)
+			let predicate = NSNumber(value: 5) %>= NSNumber(value: 5)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
@@ -236,7 +236,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %>= NSNumber(8)
+			let predicate = NSNumber(value: 5) %>= NSNumber(value: 8)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
@@ -270,7 +270,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %> NSNumber(3)
+			let predicate = NSNumber(value: 5) %> NSNumber(value: 3)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = data
@@ -278,7 +278,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %> NSNumber(5)
+			let predicate = NSNumber(value: 5) %> NSNumber(value: 5)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []
@@ -286,7 +286,7 @@ class NSPredicateTests: XCTestCase {
 		}
 		
 		do {
-			let predicate = NSNumber(5) %> NSNumber(8)
+			let predicate = NSNumber(value: 5) %> NSNumber(value: 8)
 			let subData = data.filtered(using: predicate)
 			
 			let expected: NSSet = []

@@ -127,7 +127,7 @@ extension ObjectGraph : Collection {
 	}
 	
 	public subscript(index: Int) -> ObjectGraph {
-		if let object = object as? NSArray where index < object.count {
+		if let object = object as? NSArray, index < object.count {
 			return ObjectGraph(object[index])
 		} else if index == 0 {
 			return self
