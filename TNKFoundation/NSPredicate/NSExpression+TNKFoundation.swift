@@ -9,20 +9,13 @@
 import Foundation
 
 
-extension NSObject {
-	var NSExpressionValue: NSExpression {
-		return NSExpression(forConstantValue: self)
-	}
-}
-
-extension NSExpression {
-	override var NSExpressionValue: NSExpression {
-		return self
-	}
+precedencegroup KeyPathPrecedence {
+	higherThan: ComparisonPrecedence
 }
 
 
-prefix operator % {}
+prefix operator %
+
 public prefix func % (value: String) -> NSExpression {
 	return NSExpression(forKeyPath: value)
 }

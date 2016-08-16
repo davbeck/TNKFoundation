@@ -10,9 +10,9 @@ import Foundation
 
 
 public struct ObjectGraph {
-	public let object: AnyObject?
+	public let object: Any?
 	
-	public init(_ object: AnyObject?) {
+	public init(_ object: Any?) {
 		self.object = object
 	}
 	
@@ -148,7 +148,7 @@ extension ObjectGraph : Collection {
 	}
 	
 	public var keys: [String] {
-		if let object = object as? [String:AnyObject] {
+		if let object = object as? [String:Any] {
 			return Array(object.keys)
 		} else {
 			return []

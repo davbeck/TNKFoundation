@@ -9,42 +9,21 @@
 import Foundation
 
 
-infix operator %== { precedence 130 }
-
-public func %== (left: NSObject, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
-		modifier: .direct,
-		type: .equalTo,
-		options: []
-	)
+private func asExpression(_ value: Any) -> NSExpression {
+	if let expression = value as? NSExpression {
+		return expression
+	} else {
+		return NSExpression(forConstantValue: value)
+	}
 }
 
-public func %== (left: NSObject, right: String) -> NSPredicate {
-	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
-		modifier: .direct,
-		type: .equalTo,
-		options: []
-	)
-}
 
-public func %== (left: String, right: NSObject) -> NSPredicate {
-	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
-		modifier: .direct,
-		type: .equalTo,
-		options: []
-	)
-}
+infix operator %==: ComparisonPrecedence
 
-public func %== (left: String, right: String) -> NSPredicate {
+public func %== (left: Any, right: Any) -> NSPredicate {
 	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
+		leftExpression: asExpression(left),
+		rightExpression: asExpression(right),
 		modifier: .direct,
 		type: .equalTo,
 		options: []
@@ -52,12 +31,12 @@ public func %== (left: String, right: String) -> NSPredicate {
 }
 
 
-infix operator %!= { precedence 130 }
+infix operator %!=: ComparisonPrecedence
 
-public func %!= (left: NSObject, right: NSObject) -> NSPredicate {
+public func %!= (left: Any, right: Any) -> NSPredicate {
 	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
+		leftExpression: asExpression(left),
+		rightExpression: asExpression(right),
 		modifier: .direct,
 		type: .notEqualTo,
 		options: []
@@ -65,12 +44,12 @@ public func %!= (left: NSObject, right: NSObject) -> NSPredicate {
 }
 
 
-infix operator %<= { precedence 130 }
+infix operator %<=: ComparisonPrecedence
 
-public func %<= (left: NSObject, right: NSObject) -> NSPredicate {
+public func %<= (left: Any, right: Any) -> NSPredicate {
 	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
+		leftExpression: asExpression(left),
+		rightExpression: asExpression(right),
 		modifier: .direct,
 		type: .lessThanOrEqualTo,
 		options: []
@@ -78,12 +57,12 @@ public func %<= (left: NSObject, right: NSObject) -> NSPredicate {
 }
 
 
-infix operator %< { precedence 130 }
+infix operator %<: ComparisonPrecedence
 
-public func %< (left: NSObject, right: NSObject) -> NSPredicate {
+public func %< (left: Any, right: Any) -> NSPredicate {
 	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
+		leftExpression: asExpression(left),
+		rightExpression: asExpression(right),
 		modifier: .direct,
 		type: .lessThan,
 		options: []
@@ -91,12 +70,12 @@ public func %< (left: NSObject, right: NSObject) -> NSPredicate {
 }
 
 
-infix operator %>= { precedence 130 }
+infix operator %>=: ComparisonPrecedence
 
-public func %>= (left: NSObject, right: NSObject) -> NSPredicate {
+public func %>= (left: Any, right: Any) -> NSPredicate {
 	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
+		leftExpression: asExpression(left),
+		rightExpression: asExpression(right),
 		modifier: .direct,
 		type: .greaterThanOrEqualTo,
 		options: []
@@ -104,12 +83,12 @@ public func %>= (left: NSObject, right: NSObject) -> NSPredicate {
 }
 
 
-infix operator %> { precedence 130 }
+infix operator %>: ComparisonPrecedence
 
-public func %> (left: NSObject, right: NSObject) -> NSPredicate {
+public func %> (left: Any, right: Any) -> NSPredicate {
 	return NSComparisonPredicate(
-		leftExpression: left.NSExpressionValue,
-		rightExpression: right.NSExpressionValue,
+		leftExpression: asExpression(left),
+		rightExpression: asExpression(right),
 		modifier: .direct,
 		type: .greaterThan,
 		options: []
@@ -117,10 +96,10 @@ public func %> (left: NSObject, right: NSObject) -> NSPredicate {
 }
 
 extension NSComparisonPredicate {
-	public convenience init(_ leftExpression: NSObject, _ type: Operator, _ rightExpression: NSObject) {
+	public convenience init(_ left: Any, _ type: Operator, _ right: Any) {
 		self.init(
-			leftExpression: leftExpression.NSExpressionValue,
-			rightExpression: rightExpression.NSExpressionValue,
+			leftExpression: asExpression(left),
+			rightExpression: asExpression(right),
 			modifier: .direct,
 			type: type,
 			options: []
