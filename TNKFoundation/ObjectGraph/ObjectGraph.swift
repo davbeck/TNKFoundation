@@ -117,6 +117,8 @@ extension ObjectGraph : Collection {
 			return object.count
 		} else if let object = object as? NSDictionary {
 			return object.count
+		} else if object == nil {
+			return 0
 		} else {
 			return 1
 		}
