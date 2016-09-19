@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "TNKFoundation"
-  s.version          = "2.0.0"
+  s.version          = "3.0.0"
   s.summary          = "A collection of small utilities in Swift."
 
   s.homepage         = "https://github.com/davbeck/TNKFoundation"
@@ -13,19 +13,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
   s.watchos.deployment_target = '2.0'
   s.requires_arc = true
-  
-  s.subspec "AutoLayout" do |sp|
-    sp.platform = :ios
-    sp.source_files = "TNKFoundation/AutoLayout/*.swift"
-  end
-  
-  s.subspec "GCD" do |sp|
-    sp.source_files = "TNKFoundation/GCD/*.swift"
-  end
-  
-  s.subspec "NSNumber" do |sp|
-    sp.source_files = "TNKFoundation/NSNumber/*.swift"
-  end
+  s.swift_version = '3.0'
 
   s.subspec "NSPredicate" do |sp|
     sp.source_files = "TNKFoundation/NSPredicate/*.swift"
@@ -41,10 +29,5 @@ Pod::Spec.new do |s|
   
   s.subspec "ObjectGraph" do |sp|
     sp.source_files = "TNKFoundation/ObjectGraph/*.swift"
-  end
-  
-  s.subspec "ShapeView" do |sp|
-    sp.platform = :ios
-    sp.source_files = "TNKFoundation/ShapeView/*.swift"
   end
 end

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		115B292E1C93726B0051BF45 /* TNKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 115B292D1C93726B0051BF45 /* TNKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		115B29351C93726B0051BF45 /* TNKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115B292A1C93726B0051BF45 /* TNKFoundation.framework */; };
-		115B29561C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B29451C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift */; };
 		115B29591C9372930051BF45 /* NSComparisonPredicate+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B294B1C9372930051BF45 /* NSComparisonPredicate+TNKFoundation.swift */; };
 		115B295A1C9372930051BF45 /* NSCompoundPredicate+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B294C1C9372930051BF45 /* NSCompoundPredicate+TNKFoundation.swift */; };
 		115B295B1C9372930051BF45 /* NSExpression+TNKFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B294D1C9372930051BF45 /* NSExpression+TNKFoundation.swift */; };
@@ -35,7 +34,6 @@
 		115B292F1C93726B0051BF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		115B29341C93726B0051BF45 /* TNKFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TNKFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		115B293B1C93726B0051BF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		115B29451C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+TNKFoundation.swift"; sourceTree = "<group>"; };
 		115B294B1C9372930051BF45 /* NSComparisonPredicate+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSComparisonPredicate+TNKFoundation.swift"; sourceTree = "<group>"; };
 		115B294C1C9372930051BF45 /* NSCompoundPredicate+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCompoundPredicate+TNKFoundation.swift"; sourceTree = "<group>"; };
 		115B294D1C9372930051BF45 /* NSExpression+TNKFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSExpression+TNKFoundation.swift"; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 		115B292C1C93726B0051BF45 /* TNKFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				115B29441C9372930051BF45 /* AutoLayout */,
 				115B294A1C9372930051BF45 /* NSPredicate */,
 				115B294E1C9372930051BF45 /* NSTimeInterval */,
 				115B29501C9372930051BF45 /* NSURLQueryItem */,
@@ -105,14 +102,6 @@
 				115B29601C9372FB0051BF45 /* TNKFoundationTests-Bridging-Header.h */,
 			);
 			path = TNKFoundationTests;
-			sourceTree = "<group>";
-		};
-		115B29441C9372930051BF45 /* AutoLayout */ = {
-			isa = PBXGroup;
-			children = (
-				115B29451C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift */,
-			);
-			path = AutoLayout;
 			sourceTree = "<group>";
 		};
 		115B294A1C9372930051BF45 /* NSPredicate */ = {
@@ -264,7 +253,6 @@
 				115B295C1C9372930051BF45 /* NSTimeInterval+TNKFoundation.swift in Sources */,
 				115B295E1C9372930051BF45 /* ObjectGraph.swift in Sources */,
 				115B295D1C9372930051BF45 /* NSURLQueryItem+TNKSubscript.swift in Sources */,
-				115B29561C9372930051BF45 /* NSLayoutAnchor+TNKFoundation.swift in Sources */,
 				115B295A1C9372930051BF45 /* NSCompoundPredicate+TNKFoundation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +318,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -370,6 +359,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
